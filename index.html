@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse the Evo Blu-ray collection, from Blu-ray to 4K Ultra HD.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Evo Blu-ray Library</title>
+  <link rel="icon" href="assets/disc.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="library.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home"><img src="assets/disc.svg" alt=""> Blu-ray Library</a>
+    <nav aria-label="Library">
+      <a href="#home" data-route="home">Home</a>
+      <a href="#collection" data-route="collection">Collection</a>
+      <details class="genre-menu"><summary>Genres <span aria-hidden="true">⌄</span></summary><div id="genre-menu"></div></details>
+      <a href="#wishlist" data-route="wishlist">Wishlist</a>
+    </nav>
+    <div class="header-tools">
+      <label class="search"><span id="search-icon" aria-hidden="true"></span><input id="search" type="search" placeholder="Search your collection…" aria-label="Search your collection"></label>
+    </div>
+  </header>
+  <main>
+    <section id="hero" class="hero" aria-label="Featured film" hidden></section>
+    <section class="collection" id="library" aria-labelledby="collection-title">
+      <div class="collection-head">
+        <div class="section-title"><h2 id="collection-title">My Collection</h2><span id="count"></span></div>
+        <div id="stats" class="stats" aria-label="Collection statistics"></div>
+      </div>
+      <div class="toolbar">
+        <div id="genres" class="genre-filters" aria-label="Filter by genre"></div>
+        <div class="view-controls">
+          <label class="sort">Sort by <select id="sort" aria-label="Sort films"><option value="shelf">Shelf Order</option><option value="added">Recently Added</option><option value="title">Title A–Z</option><option value="year">Release Year</option><option value="runtime">Runtime</option></select></label>
+        </div>
+      </div>
+      <ul id="film-list" class="film-list" role="list"></ul>
+      <p id="empty" class="empty" role="status" hidden></p>
+    </section>
+  </main>
+  <footer class="footer">Cover artwork from IMDb. IMDb audience scores via Agregarr.</footer>
+  <dialog id="film-dialog" aria-labelledby="detail-title"><button type="button" class="dialog-close" aria-label="Close film details">×</button><div id="detail"></div></dialog>
+</body>
+</html>
