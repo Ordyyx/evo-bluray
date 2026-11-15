@@ -111,7 +111,7 @@ function render() {
       posterArt(film), el('span', { class: 'film-caption' }, el('strong', {}, film.title),
         el('small', {}, [film.year, film.runtime ? duration(film.runtime) : '', film.ukRating ? `UK ${film.ukRating}` : '',
           Number.isFinite(film.imdbRating) ? `IMDb ${film.imdbRating.toFixed(1)}/10` : ''].filter(Boolean).join(' · '))),
-      formatBadges(film));
+      formatBadges(film), el('span', { class: 'row-arrow', 'aria-hidden': 'true' }, '›'));
     button.addEventListener('click', () => showFilm(film));
     return el('li', {}, button);
   }));
